@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de Adviento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=2">
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#044529">
+
+    <!-- Soporte para iPhone (Safari) -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Adviento">
+    <link rel="apple-touch-icon" href="img/icon-192.png">
+</head>
+<body class="calendar-page">
+    <header class="calendar-header">
+        <button id="reread-btn" type="button" class="reread-link">
+          <span class="reread-icon" aria-hidden="true">✉</span>
+          <span>Releer carta</span>
+        </button>
+        <h1 class="script-title calendar-title">Nuestro Diciembre</h1>
+        <p class="calendar-subtitle">Una pequeña sorpresa para cada día hasta Navidad</p>
+    </header>
+
+    <main class="calendar-container">
+        <section id="calendar-grid" class="calendar-grid" aria-label="Días del calendario de adviento">
+            <!-- Las 24 ventanitas se generan desde calendario.js -->
+        </section>
+    </main>
+
+    <!-- Modal de sorpresa del día -->
+    <div id="day-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true">
+        <div class="modal-card">
+            <button class="modal-close" aria-label="Cerrar">&times;</button>
+            <span id="modal-day-label" class="modal-day-label">Día 1</span>
+            <h2 id="modal-title" class="script-title modal-title"></h2>
+            <div id="modal-media" class="modal-media hidden"></div>
+            <div id="modal-body" class="modal-body"></div>
+            <a id="modal-link" class="btn-ribbon hidden" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+    </div>
+
+    <!-- Modal para días aún bloqueados -->
+    <div id="locked-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true">
+        <div class="modal-card modal-card--small">
+            <button class="modal-close" aria-label="Cerrar">&times;</button>
+            <div class="locked-seal">♥</div>
+            <h2 class="script-title modal-title">Aún no toca...</h2>
+            <p id="locked-text" class="modal-body"></p>
+            <button class="btn-ribbon modal-ok-btn">Esperaré un poquito</button>
+        </div>
+    </div>
+    
+    <!-- Modal para releer la carta inicial -->
+    <div id="letter-reread-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true">
+        <article class="modal-card">
+            <button class="modal-close" aria-label="Cerrar">&times;</button>
+            <h2 class="script-title letter-heading">Para ti,</h2>
+            <div class="letter-body">
+                <p>Aquí va tu mensaje explicando por qué has hecho este calendario de adviento.</p>
+                <p>Puedes añadir los párrafos que necesites para que se lea como una carta de verdad.</p>
+            </div>
+            <p class="letter-signature">Con todo mi amor</p>
+            <button type="button" class="btn-ribbon modal-ok-btn">Volver al calendario</button>
+        </article>
+    </div>
+
+    <script src="js/dias.js?v=1.0.0"></script>
+    <script src="js/calendario.js?v=1.0.0"></script>
+</body>
+</html>

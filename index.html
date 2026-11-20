@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Adviento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#044529">
+
+    <!-- Soporte para iPhone (Safari) -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Adviento">
+    <link rel="apple-touch-icon" href="img/icon-192.png">
+</head>
+<body class="intro-page">
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <h1 class="script-title">Diciembre</h1>
+            <div class="loader-line"></div>
+            <p class="loader-subtitle">Preparando algo especial...</p>
+        </div>
+    </div>
+
+    <main id="intro-scene" class="scene hidden">
+        <div id="envelope-wrapper" class="envelope-wrapper">
+            <div id="envelope" class="envelope" role="button" tabindex="0" aria-label="Abrir sobre">
+                <div class="envelope-flap"></div>
+                <div class="envelope-pocket"></div>
+                <div class="wax-seal">♥</div>
+            </div>
+            <p class="hint-text">Toca el sobre para abrirlo</p>
+        </div>
+
+        <article id="letter-modal" class="letter-card hidden">
+            <h2 class="script-title letter-heading">Para ti,</h2>
+            <div class="letter-body">
+                <p>Aquí va tu mensaje explicando por qué has hecho este calendario de adviento.</p>
+                <p>Puedes añadir los párrafos que necesites para que se lea como una carta de verdad.</p>
+            </div>
+            <p class="letter-signature">Con todo mi amor</p>
+            <button id="enter-calendar-btn" class="btn-ribbon">Abrir nuestro diciembre</button>
+        </article>
+    </main>
+
+    <script src="js/intro.js"></script>
+</body>
+</html>
